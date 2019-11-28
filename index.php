@@ -19,12 +19,34 @@
 <body>
     <div class="container p-4">
     <div class="login_form">
+       
         <form class="" action="do/autorization.php" method="post">
             <div class="form-row text-center flex-column">
                 <div class="logo_form">
                     <img src="images/logo.png" class="img-fluid" alt="">
                 </div>
-               
+                <?php
+                    if( isset($_GET["status"]) && $_GET["status"] == "nostatus"){
+                        ?>
+                        <div class="alert alert-danger" role="alert">
+                            მონიშნე სტატუსი!
+                        </div>
+                        <?php
+                    }elseif( isset($_GET["status"]) && $_GET["status"] == "twologinstatus" ){
+                        ?>
+                        <div class="alert alert-danger" role="alert">
+                            მონიშნე ერთი სტატუსი!
+                        </div>
+                        <?php
+                    }elseif( isset($_GET["check"]) && $_GET["check"] == "false" ){
+                        ?>
+                        <div class="alert alert-danger" role="alert">
+                            ემაილი ან პაროლი არასწორია!
+                        </div>
+                        <?php
+                    }
+                ?>
+                
                 <div class="form-group">
                     <label for="inputEmail4">ემაილი</label>
                     <input type="email" class="form-control" name="email" id="inputEmail4" placeholder="მიუთითე ემაილი..." required>
@@ -34,17 +56,18 @@
                     <input type="password" class="form-control" name="password" id="inputPassword4" placeholder="მიუთითე პაროლი..." required>
                 </div>
             </div>
+            <h4 class="text-center m-3 border-bottom pb-2">სტატუსი</h4>
             <div class="login_type_checkboxes d-flex flex-row text-center justify-content-center m-4">
                     <div class="custom-control custom-checkbox m-2">
                         
-                        <label class="checkbox-styled">მასწავლებელი
+                        <label class="checkbox-styled"> მოსწავლე
                             <input name="student-checkbox" type="checkbox" id="student-checkbox">
                             <span class="checkmark student-checkbox"></span>
                         </label>
                     </div>
                     <div class="custom-control custom-checkbox m-2">
                         
-                        <label class="checkbox-styled">მოსწავლე
+                        <label class="checkbox-styled">მასწავლებელი
                             <input name="teacher-checkbox" type="checkbox" id="teacher-checkbox">
                             <span class="checkmark teacher-checkbox"></span>
                         </label>

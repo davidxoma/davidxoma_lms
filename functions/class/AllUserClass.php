@@ -1,7 +1,10 @@
 <?php
+    ob_start();
     class AUTH
     {
-      
+        public function TEXT($text){
+            echo '<div class="alert alert-danger" role="alert">' . $text . '</div>';
+        }
         public function Check_Auth($mail, $pass){
             
             if( isset($_POST["student-checkbox"]) && $_POST["student-checkbox"] == "on" && !isset($_POST["teacher-checkbox"])){
@@ -12,9 +15,11 @@
                 $do_query = $conn->query($s_query);
                     if( $do_query->num_rows > 0 && $do_query->num_rows < 2 ){
                         echo "Logged Successfullly as Student";
+                        header("location: ../dashboard.php");
                         return true;
                     }else{
-                        echo "Somethings Wrong";
+                        echo "Somethings Wrong student";
+                        header("location: ../index.php?check=false");
                         return false;
                     }
                     
@@ -26,17 +31,21 @@
                 $do_query = $conn->query($s_query);
                     if( $do_query->num_rows > 0 && $do_query->num_rows < 2 ){
                         echo "Logged Successfullly as Student";
+                        header("location: ../dashboard.php");
                         return true;
                     }else{
-                        echo "Somethings Wrong";
+                        echo "Somethings Wrong teacher";
+                        header("location: ../index.php?check=false");
                         return false;
                     }
                     
             }elseif( $_POST["teacher-checkbox"] == "on" && $_POST["student-checkbox"] == "on" ){
                 echo "Chooseonly one login status";
+                header("location: ../index.php?check=false&status=twologinstatus");
                 
             }elseif( !isset($_POST["student-checkbox"]) && !isset($_POST["teacher-checkbox"]) ){
                 echo "Please choose the statues";
+                header("location: ../index.php?check=false&status=nostatus");
             }
 
         }
