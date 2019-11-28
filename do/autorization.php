@@ -1,3 +1,6 @@
 <?php
-    print_r($_POST);
+    include("../functions/class/AllUserClass.php");
+    $login = new AUTH;
+    $check_user_login = $login->Check_Auth($_POST["email"], $_POST["password"]);
+   
 ?>
