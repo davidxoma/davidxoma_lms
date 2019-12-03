@@ -1,5 +1,6 @@
 <?php
     ob_start();
+    session_start();
     class AUTH
     {
         public function TEXT($text){
@@ -15,7 +16,7 @@
                 $do_query = $conn->query($s_query);
                     if( $do_query->num_rows > 0 && $do_query->num_rows < 2 ){
                         echo "Logged Successfullly as Student";
-                        header("location: ../dashboard.php");
+                        header("location: ../do.php?login=success&status=student");
                         return true;
                     }else{
                         echo "Somethings Wrong student";
@@ -30,8 +31,13 @@
                 $s_query = "SELECT * FROM teachers_table WHERE teacher_email = '$mail' AND teacher_password = '$pass'";
                 $do_query = $conn->query($s_query);
                     if( $do_query->num_rows > 0 && $do_query->num_rows < 2 ){
-                        echo "Logged Successfullly as Student";
-                        header("location: ../dashboard.php");
+                        echo "Logged Successfullly as Teacher";
+                        $user_array = mysqli_fetch_assoc($do_query);
+                        $user_id = $user_array["teacher_id"];
+                        $_SESSION['logged_user'] = $mail;
+                        $_SESSION['logged_user_status'] = "teacher";
+                        $_SESSION['logged_user_id'] = $user_id;
+                        header("location: ../do.php?login=success&status=teacher");
                         return true;
                     }else{
                         echo "Somethings Wrong teacher";
