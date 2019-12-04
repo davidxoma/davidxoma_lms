@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php 
+
+  include("functions/class/User_class.php");
+  $user = new USER;
+?>
 
 <head>
 
@@ -17,6 +22,7 @@
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  
 
 </head>
 

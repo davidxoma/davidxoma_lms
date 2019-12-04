@@ -11,9 +11,10 @@
 
 
   <div id="wrapper">
-
+    
 
     <?php
+    
       include("parts/leftnav.php");
     ?>
 

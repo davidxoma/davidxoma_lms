@@ -47,11 +47,11 @@
   <script src="scripts/sb-admin-2.min.js"></script>
 
   <!-- Page level plugins -->
-  <script src="scripts/Chart.min.js"></script>
+  <!-- <script src="scripts/Chart.min.js"></script> -->
 
   <!-- Page level custom scripts -->
-  <script src="scripts/chart-area-demo.js"></script>
-  <script src="scripts/chart-pie-demo.js"></script>
+  <!-- <script src="scripts/chart-area-demo.js"></script>
+  <script src="scripts/chart-pie-demo.js"></script> -->
 
 </body>
 

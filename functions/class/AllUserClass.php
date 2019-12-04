@@ -16,6 +16,11 @@
                 $do_query = $conn->query($s_query);
                     if( $do_query->num_rows > 0 && $do_query->num_rows < 2 ){
                         echo "Logged Successfullly as Student";
+                        $user_array = mysqli_fetch_assoc($do_query);
+                        $user_id = $user_array["student_id"];
+                        $_SESSION['logged_user'] = $mail;
+                        $_SESSION['logged_user_status'] = "student";
+                        $_SESSION['logged_user_id'] = $user_id;
                         header("location: ../do.php?login=success&status=student");
                         return true;
                     }else{
