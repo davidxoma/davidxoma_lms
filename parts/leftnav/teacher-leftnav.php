@@ -4,6 +4,7 @@
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
+          <span>მასწავლებელი</span>
         </div>
         
       </a>
@@ -36,6 +37,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">ყველა ოფცია</h6>
             <a class="collapse-item" href="#">ჩემი დავალებები</a>
+            
           </div>
         </div>
       </li>

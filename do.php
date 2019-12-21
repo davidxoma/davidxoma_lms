@@ -15,7 +15,12 @@
 
     <?php
     
-      include("parts/leftnav.php");
+      // include("parts/leftnav.php");
+      if( $_SESSION["logged_user_status"] == "student" ){
+        include("parts/leftnav/student-leftnav.php");
+      }else if( $_SESSION["logged_user_status"] == "teacher" ){
+        include("parts/leftnav/teacher-leftnav.php");
+      }
     ?>
 
     <div id="content-wrapper" class="d-flex flex-column">
