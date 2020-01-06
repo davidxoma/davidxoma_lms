@@ -36,8 +36,8 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">ყველა ოფცია</h6>
-            <a class="collapse-item" href="#">ჩემი დავალებები</a>
-            <a class="collapse-item" href="#">შესრულებული</a>
+            <a class="collapse-item" href="do.php?section=studentexercises">ჩემი დავალებები</a>
+            <a class="collapse-item" href="do.php?section=studentfinishedexercises">შესრულებული</a>
           </div>
         </div>
       </li>

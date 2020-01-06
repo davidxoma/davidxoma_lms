@@ -31,8 +31,19 @@
      
         <?php
           include("parts/topnav.php");
+          if( !isset($_GET["section"]) || $_GET["section"] == "" ){
+            if( $_SESSION["logged_user_status"] == "student" ){
+              include("parts/dashboard/student-dashboard.php");
+            }else if( $_SESSION["logged_user_status"] == "teacher" ){
+              include("parts/dashboard/teacher-dashboard.php");
+            }
+          }
+
+          if( isset($_GET["section"]) && $_GET["section"] == "studentexercises" ){
+            include("parts/student/student-exercises.php");
+          };
         ?>
-      
+    
       </div>
 
       
