@@ -1,18 +1,19 @@
-
 @font-face {
-  font-family: main_body_font;
-  src: url(../fonts/bpg_banner_caps.ttf);
+    font-family: main_body_font;
+    src: url(../fonts/bpg_banner_caps.ttf);
 }
 
-body{
+body {
     font-family: main_body_font;
 }
-#student-checkbox{
-    
-    cursor: pointer;
 
+#student-checkbox {
+    cursor: pointer;
 }
+
+
 /* Customize the label (the container) */
+
 .checkbox-styled {
     display: block;
     position: relative;
@@ -24,51 +25,65 @@ body{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-  }
-  
-  /* Hide the browser's default checkbox */
-  .checkbox-styled input {
+}
+
+
+/* Hide the browser's default checkbox */
+
+.checkbox-styled input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
     height: 0;
     width: 0;
-  }
-  
-  /* Create a custom checkbox */
-  .checkmark {
+}
+
+
+/* Create a custom checkbox */
+
+.checkmark {
     position: absolute;
     top: 0;
     left: 0;
     height: 25px;
     width: 25px;
     background-color: #eee;
-  }
-  
-  /* On mouse-over, add a grey background color */
-  .checkbox-styled:hover input ~ .checkmark {
+}
+
+
+/* On mouse-over, add a grey background color */
+
+.checkbox-styled:hover input~.checkmark {
     background-color: #ccc;
-  }
-  
-  /* When the checkbox is checked, add a blue background */
-  .checkbox-styled input:checked ~ .checkmark {
+}
+
+
+/* When the checkbox is checked, add a blue background */
+
+.checkbox-styled input:checked~.checkmark {
     background-color: #2196F3;
-  }
-  
-  /* Create the checkmark/indicator (hidden when not checked) */
-  .checkmark:after {
+}
+
+
+/* Create the checkmark/indicator (hidden when not checked) */
+
+.checkmark:after {
     content: "";
     position: absolute;
     display: none;
-  }
-  
-  /* Show the checkmark when checked */
-  .checkbox-styled input:checked ~ .checkmark:after {
+}
+
+
+/* Show the checkmark when checked */
+
+.checkbox-styled input:checked~.checkmark:after {
     display: block;
-  }
-  
-  /* Style the checkmark/indicator */
-  .checkbox-styled .checkmark:after {
+}
+
+
+/* Style the checkmark/indicator */
+
+.checkbox-styled .checkmark:after {
     left: 9px;
     top: 5px;
     width: 5px;
@@ -78,4 +93,4 @@ body{
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
-  }
+}

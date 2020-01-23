@@ -15,10 +15,11 @@
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
   <script src="scripts/myscript.js"></script>
+  <link rel="icon" href="images/logo.png">
 </head>
 <body>
-    <div class="container p-4">
-    <div class="login_form">
+    <div class="container p-4 d-flex justify-content-center"">
+    <div class="login_form w-50 justify-content-center">
        
         <form class="" action="do/autorization.php" method="post">
             <div class="form-row text-center flex-column">
@@ -65,6 +66,7 @@
                             <span class="checkmark student-checkbox"></span>
                         </label>
                     </div>
+                    
                     <div class="custom-control custom-checkbox m-2">
                         
                         <label class="checkbox-styled">მასწავლებელი
