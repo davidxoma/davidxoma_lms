@@ -73,14 +73,19 @@
               <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-envelope fa-fw"></i>
                 <!-- Counter - Messages -->
-                <span class="badge badge-danger badge-counter">7</span>
+                <?php 
+                  if ( $chat->UnreadMsg($_SESSION['logged_user_id']) > 0){
+                    ?><span class="badge badge-danger badge-counter"><?php echo $chat->UnreadMsg($_SESSION['logged_user_id']); ?></span><?php
+                  };
+                ?>
+                
               </a>
               <!-- Dropdown - Messages -->
               <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
                 <h6 class="dropdown-header">
                   წერილები
                 </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
+                <!-- <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="dropdown-list-image mr-3">
                     <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
                     <div class="status-indicator bg-success"></div>
@@ -89,7 +94,10 @@
                     <div class="text-truncate">ბიოლოგიის გამომიგზავნე რა</div>
                     <div class="small text-gray-500">გიორგი ნაზღაიძე · 58წ</div>
                   </div>
-                </a>
+                </a> -->
+                <?php
+                  $chat->GetLastMessages($_SESSION['logged_user_id']);
+                ?>
               
                 
                

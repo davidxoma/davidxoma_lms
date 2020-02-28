@@ -3,6 +3,8 @@
 <?php 
 
   include("functions/class/User_class.php");
+  include("functions/class/MSG_CLASS.php");
+  $chat = new CHAT;
   $user = new USER;
 ?>
 
